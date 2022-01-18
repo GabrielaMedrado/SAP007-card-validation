@@ -4,7 +4,7 @@
 
 - [1. Introdução](#1-Introdução)
 - [2. Resumo do projeto](#2-resumo-do-projeto)
-- [3. Objetivos de aprendizagem](#3-objetivos-de-aprendizagem)
+- [3. Protótipo](#3-protótipo)
 - [4. Considerações gerais](#4-consideracoes-gerais)
 - [5. Critérios de aceitação mínimos do projeto](#5-critérios-de-aceitação-mínimos-do-projeto)
 - [6. Hacker edition](#6-hacker-edition)
@@ -16,36 +16,24 @@
 
 ## 1. Introdução
 
-O [algoritmo de Luhn](https://en.wikipedia.org/wiki/Luhn_algorithm), também
-chamado de módulo 10, é um método de soma de verificação, usado para validar
-números de identificação, como o IMEI de telefones celulares, cartões de crédito
-etc.
+As compras online estão cada vez mais comuns e não param de crescer. Segundo uma pesquisa realizada com os dados de compra no e-commerce durante o primeiro trimestre de 2021, houve crescimento das vendas online no Brasil. Foram realizadas, segundo a pesquisa, 78,5 milhões de compras online no três primeiros meses do ano, um aumento de 57,4% em comparação ao mesmo período do ano passado.
+Fonte:
+[https://www.ecommercebrasil.com.br/noticias/primeiro-trimestre-de-2021-vendas-alta-de-57/#:~:text=Foram%20realizadas%2078%2C5%20milh%C3%B5es,2%25%20na%20compara%C3%A7%C3%A3o%20com%202020.] 
 
-Esse algoritmo é simples. Obtemos o inverso do número a ser verificado (que
-contém apenas dígitos [0-9]); todos os números que ocupam uma posição par devem
-ser multiplicados por dois; se esse número for maior ou igual a 10, devemos
-adicionar os dígitos do resultado; o número a verificar será válido se a soma de
-seus dígitos finais for um múltiplo de 10.
+Atrelado a este aumento, o uso de cartões passou a ser cada vez maior em sites de compras. A tendência é estar nas redes e vender virtualmente, mas para isso, os comerciantes precisam garantir a segurança da transação e evitar cair em golpes com cartões de créditos inválidos. Com um sistema que valide o cartão do usuário, este problema pode ser sanado.
 
-![gráfico do algoritmo de
-Luhn](https://www.101computing.net/wp/wp-content/uploads/Luhn-Algorithm.png)
 
 ## 2. Resumo do projeto
 
-Neste projeto, você precisará criar um aplicativo da Web que permita ao usuário
-validar o número de um cartão de crédito. Além disso, você precisará
-implementar a funcionalidade para ocultar todos os dígitos de um cartão, exceto
-os quatro últimos.
+Este programa pode ser utilizado por qualquer e-commerce. Após preencher todos os dados pessoais, o usuário será redirecionado para este programa que irá validar o cartão. Os números impressos no cartão serão digitados e o programa verificará se é válido ou não.
+Se válido, retorna 
 
-O tema é livre. Você deve pensar em quais situações da vida real um cartão de
-crédito precisaria ser validado e em como deveria ser a experiência do usuário
-(telas, explicações, mensagens, cores, marca?) etc.
+Esta validação do cartão de crédito é o primeiro passo para aceitar um pagamento com cartão. Após esta validação, os dados do cartão serão enviados para a empressa emissora que irá autorizar a transação ou não (caso o cartão esteja expirado ou outros motivos).
 
-Você aprenderá a criar um aplicativo Web que irá interagir interagir com uma
-pessoa ao final do desenvolvimento através do navegador, usando HTML, CSS e
-JavaScript como tecnologias.
 
-## 3. Objetivos de aprendizagem
+## 3. Protótipo
+
+O programa foi pensado para ser utilizado por pequenos 
 
 Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projeto. Pense nisso para decidir sua estratégia de trabalho.
 
