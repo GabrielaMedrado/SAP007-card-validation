@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Tarjeta de crédito válida</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root">
-      <h1>Hello world!</h1>
-    </div>
-    <script src="index.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Erica Estela Acessórios</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div id="root">
+    <header>
+      <h2>Insira o número do seu cartão para prosseguir com o pagamento</h2>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#">Novidades</a></li>
+        <li><a href="#">Bolsas</a></li>
+        <li><a href="#">Carteiras</a></li>
+        <li><a href="#">Acessórios</a></li>
+        <li><a href="#">Promoção</a></li>
+      </ul>
+    </nav>
+
+    <form>
+      <input id="cardNumber" type="text" maxlength="16">
+      <label id="validationResult"></label>
+    </form>
+
+    <button id="botao1">Validar</button>
+
+  </div>
+  <script src="index.js" type="module"></script>
+</body>
+
 </html>

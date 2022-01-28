@@ -3,51 +3,56 @@ const validator = {
   isValid(creditCardNumber) {
 
     //verifica se foi digitado somente números 
-    for (var i = 0; i < creditCardNumber.length; i++) {
-      console.log("index:" + i + " - " + creditCardNumber.charAt(i));
+    for (let i = 0; i < creditCardNumber.length; i++) {
+      console.log(creditCardNumber.charAt(i));
       if (isNaN(creditCardNumber.charAt(i)) || creditCardNumber.charAt(i) == " ") {
-        console.log("Cartão Inválido!")
-        return "Cartão Inválido";
+        console.log("Cartão Inválido! Não é número")
+        return false;
       }
     }
 
+
     // algoritmo de Luhn
-    var soma = 0;
-    for (var i = 0; i < creditCardNumber.length; i++) {
-      if ((i % 2) == 0) {
-        if (creditCardNumber.charAt(i) < 5) {
-          var posicaoPar = creditCardNumber.charAt(i) * 2;
+
+    const numeroEmArray = creditCardNumber.split("");
+    const inverseCreditCardNumber = numeroEmArray.slice(0).reverse();
+    console.log("O número do cartão invertido " + inverseCreditCardNumber);
+    let soma = 0;
+    for (let i = 0; i < inverseCreditCardNumber.length; i++) {
+      if (((i + 1) % 2) == 0) {
+        if (inverseCreditCardNumber[i] < 5) {
+          let posicaoPar = inverseCreditCardNumber[i] * 2;
           soma = soma + parseInt(posicaoPar, 10);
 
         } else {
-          var posicaoPar = creditCardNumber.charAt(i) * 2;
-          posicaoPar = posicaoPar - 10;
-          soma = soma + 1 + parseInt(posicaoPar, 10);
+          let posicaoPar = inverseCreditCardNumber[i] * 2;
+          posicaoPar = posicaoPar - 9;
+          soma = soma + parseInt(posicaoPar, 10);
         }
 
       } else {
-        soma = soma + parseInt(creditCardNumber.charAt(i), 10);
+        soma = soma + parseInt(inverseCreditCardNumber[i], 10);
       }
     }
 
-    console.log('A soma dos números é ' + soma);
 
     if ((soma % 10) == 0) {
       console.log("Cartão Válido")
-      return "Cartão Válido";
+      return true;
     }
     console.log("Cartão Inválido")
-    return "Cartão Inválido";
+    return false;
   },
+
 
   maskify(creditCardNumber) {
 
-    var cartaoMascarado = "";
+    let cartaoMascarado = "";
 
-    for (var i = 0; i < creditCardNumber.length; i++) {
-      //cartaoMascarado = cartaoMascarado + creditCardNumber.charAt(i);
+    for (let i = 0; i < creditCardNumber.length; i++) {
+
       if (i < (creditCardNumber.length - 4)) {
-        cartaoMascarado = cartaoMascarado + "X";
+        cartaoMascarado = cartaoMascarado + "#";
       } else {
         cartaoMascarado = cartaoMascarado + creditCardNumber.charAt(i);
       }
@@ -55,6 +60,8 @@ const validator = {
     }
 
     console.log("Cartão Mascarado = " + cartaoMascarado);
+
+    return cartaoMascarado;
 
   }
 
