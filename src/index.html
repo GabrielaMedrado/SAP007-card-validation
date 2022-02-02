@@ -11,28 +11,48 @@
 
   <div id="root">
     <header>
-      <h2>Insira o número do seu cartão para prosseguir com o pagamento</h2>
+      <img src="img\Logo_EE_50r.png" class="logo">
+      <nav>
+        <ul class="nav_links">
+          <li><a class="item_menu" href="#inicio">Início</a></li>
+          <li><a class="item_menu" href="#acessorios">Acessórios</a></li>
+          <li><a class="item_menu" href="#bolsas">Bolsas</a></li>
+          <li><a class="item_menu" href=" #novidades">Novidades</a></li>
+          <li><a class="item_menu" href="#promocao">Promoções</a></li>
+        </ul>
+      </nav>
+      <img src="img\sacola_compras_50.png" class="sacolaCompras">
     </header>
 
-    <nav>
-      <ul>
-        <li><a href="#">Novidades</a></li>
-        <li><a href="#">Bolsas</a></li>
-        <li><a href="#">Carteiras</a></li>
-        <li><a href="#">Acessórios</a></li>
-        <li><a href="#">Promoção</a></li>
-      </ul>
-    </nav>
+
+    <br>
+    <p>Insira o número do seu cartão para prosseguir com o pagamento</p>
 
     <form>
-      <input id="cardNumber" type="text" maxlength="16">
+      <input id="cardNumber" type="text" pattern="\d*" maxlength="16" placeholder="0000000000000000">
+      <br><br>
       <label id="validationResult"></label>
     </form>
 
     <button id="botao1">Validar</button>
 
   </div>
+  <div class="cart">
+    <aside>
+      <h4>Resumo do Pedido</h4>
+      <br>
+      <p>BOLSA DE COURO HELÔ MÉDIA PINK</p>
+      <br>
+      <hr>
+      <p>Total: R$ 530,00</p>
+    </aside>
+  </div>
+
   <script src="index.js" type="module"></script>
+
+  <footer>
+    <p>Desenvolvido por Gabriela Medrado - 2022</p>
+  </footer>
 </body>
 
 </html>

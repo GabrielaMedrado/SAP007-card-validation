@@ -39,10 +39,13 @@ const validator = {
     if ((soma % 10) == 0) {
       console.log("Cartão Válido")
       return true;
+
     }
     console.log("Cartão Inválido")
     return false;
+
   },
+
 
 
   maskify(creditCardNumber) {
