@@ -2,6 +2,9 @@ const validator = {
   // ...
   isValid(creditCardNumber) {
 
+    if ((creditCardNumber == null) || (creditCardNumber.length == 0)) {
+      return false;
+    }
     //verifica se foi digitado somente números 
     for (let i = 0; i < creditCardNumber.length; i++) {
       console.log(creditCardNumber.charAt(i));
@@ -14,8 +17,8 @@ const validator = {
 
     // algoritmo de Luhn
 
-    const numeroEmArray = creditCardNumber.split("");
-    const inverseCreditCardNumber = numeroEmArray.slice(0).reverse();
+    const numeroEmArray = creditCardNumber.split("");//divide uma string em uma lista de substrings em um array
+    const inverseCreditCardNumber = numeroEmArray.slice(0).reverse();//retorna a cópia do array e inverte a ordem com reverse 
     console.log("O número do cartão invertido " + inverseCreditCardNumber);
     let soma = 0;
     for (let i = 0; i < inverseCreditCardNumber.length; i++) {
@@ -23,27 +26,21 @@ const validator = {
         if (inverseCreditCardNumber[i] < 5) {
           let posicaoPar = inverseCreditCardNumber[i] * 2;
           soma = soma + parseInt(posicaoPar, 10);
-
         } else {
           let posicaoPar = inverseCreditCardNumber[i] * 2;
           posicaoPar = posicaoPar - 9;
           soma = soma + parseInt(posicaoPar, 10);
         }
-
       } else {
         soma = soma + parseInt(inverseCreditCardNumber[i], 10);
       }
     }
-
-
     if ((soma % 10) == 0) {
       console.log("Cartão Válido")
       return true;
-
     }
     console.log("Cartão Inválido")
     return false;
-
   },
 
 
