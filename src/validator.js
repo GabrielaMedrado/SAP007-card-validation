@@ -7,9 +7,9 @@ const validator = {
     }
     //verifica se foi digitado somente números 
     for (let i = 0; i < creditCardNumber.length; i++) {
-      console.log(creditCardNumber.charAt(i));
+
       if (isNaN(creditCardNumber.charAt(i)) || creditCardNumber.charAt(i) == " ") {
-        console.log("Cartão Inválido! Não é número")
+
         return false;
       }
     }
@@ -19,49 +19,46 @@ const validator = {
 
     const numeroEmArray = creditCardNumber.split("");//divide uma string em uma lista de substrings em um array
     const inverseCreditCardNumber = numeroEmArray.slice(0).reverse();//retorna a cópia do array e inverte a ordem com reverse 
-    console.log("O número do cartão invertido " + inverseCreditCardNumber);
-    let soma = 0;
+
+    let sum = 0;
     for (let i = 0; i < inverseCreditCardNumber.length; i++) {
       if (((i + 1) % 2) == 0) {
+        let element = inverseCreditCardNumber[i] * 2;
         if (inverseCreditCardNumber[i] < 5) {
-          let posicaoPar = inverseCreditCardNumber[i] * 2;
-          soma = soma + parseInt(posicaoPar, 10);
+          sum = sum + parseInt(element, 10);
         } else {
-          let posicaoPar = inverseCreditCardNumber[i] * 2;
-          posicaoPar = posicaoPar - 9;
-          soma = soma + parseInt(posicaoPar, 10);
+          element = element - 9;
+          sum = sum + parseInt(element, 10);
         }
       } else {
-        soma = soma + parseInt(inverseCreditCardNumber[i], 10);
+        sum = sum + parseInt(inverseCreditCardNumber[i], 10);
       }
     }
-    if ((soma % 10) == 0) {
-      console.log("Cartão Válido")
-      return true;
-    }
-    console.log("Cartão Inválido")
-    return false;
-  },
+    if ((sum != 0) && (sum % 10) == 0) {
 
+      return true; //retorna a mensagem de Cartão Válido
+    }
+
+    return false; // retorna a mensagem de Cartão Inválido
+
+  },
 
 
   maskify(creditCardNumber) {
 
-    let cartaoMascarado = "";
+    let ocultNumber = "";
 
     for (let i = 0; i < creditCardNumber.length; i++) {
 
       if (i < (creditCardNumber.length - 4)) {
-        cartaoMascarado = cartaoMascarado + "#";
+        ocultNumber = ocultNumber + "#";
       } else {
-        cartaoMascarado = cartaoMascarado + creditCardNumber.charAt(i);
+        ocultNumber = ocultNumber + creditCardNumber.charAt(i);
       }
 
     }
 
-    console.log("Cartão Mascarado = " + cartaoMascarado);
-
-    return cartaoMascarado;
+    return ocultNumber;
 
   }
 

@@ -10,7 +10,7 @@ body {
 
 }
 
-.conteudo {
+.content {
     display: flex;
     flex-flow: column;
     height: 100vh;
@@ -54,12 +54,12 @@ main {
     height: 100vh;
 }
 
-.cartao {
+.card {
     text-align: center;
     margin: 40px;
 }
 
-.paragrafo {
+.paragraph {
     color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
@@ -74,13 +74,13 @@ input {
     height: 40px;
 }
 
-.botton {
+.button {
     border-radius: 5px;
     margin: 10px;
     padding: 5px;
 }
 
-.conteudoPrincipal {
+.mainContent {
     display: flex;
     flex-grow: 1;
     flex-basis: auto;
@@ -103,7 +103,7 @@ input {
     color: rgb(218, 214, 208)
 }
 
-.sacolaCompras {
+.bag {
     cursor: pointer;
 }
 
@@ -138,16 +138,10 @@ footer {
     flex-basis: 100px;
 }
 
-.siteSeguro {
+.secureSite {
     flex-grow: 0;
     flex-basis: 100px;
     text-align: center;
     max-height: 70px;
-
-}
-
-.linhaVertical {
-    height: 200px;
-    border-right: 1px solid black;
 
 }
